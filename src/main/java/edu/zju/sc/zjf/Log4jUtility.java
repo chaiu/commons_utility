@@ -1,4 +1,4 @@
-package com.topcoder.commons.utils;
+package edu.zju.sc.zjf;
 
 import java.lang.*;
 import java.util.*;
@@ -67,7 +67,7 @@ public class Log4jUtility {
 		if (logger == null) {
 			return;
 		}
-		
+
 		logger.log(priority, LoggingUtilityHelper.getMethodEntranceMessage(signature));
 		if (paramNames != null) {
 			logger.log(priority, LoggingUtilityHelper.getInputParametersMessage(paramNames, paramValues));

@@ -1,4 +1,4 @@
-package com.topcoder.commons.utils;
+package edu.zju.sc.zjf;
 
 import java.lang.*;
 import java.lang.reflect.Constructor;
@@ -28,7 +28,7 @@ class ExceptionHelper {
 	 * @return the constructed exception instance (not null)
 	 */
 	static <T extends Throwable> T constructException(Class<T> exceptionClass, String message) {
-		
+
 		try {
 			Constructor<T> constructor = exceptionClass.getConstructor(String.class);
 			T result = constructor.newInstance(message);
@@ -52,7 +52,7 @@ class ExceptionHelper {
 	 * @return the constructed exception instance (not null)
 	 */
 	static <T extends Throwable> T constructException(Class<T> exceptionClass, String message, Throwable cause) {
-		
+
 		try {
 			Constructor<T> constructor = exceptionClass.getConstructor(String.class, Throwable.class);
 			T result = constructor.newInstance(message, cause);

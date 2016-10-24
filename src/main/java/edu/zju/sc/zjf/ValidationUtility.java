@@ -1,7 +1,6 @@
-package com.topcoder.commons.utils;
+package edu.zju.sc.zjf;
 
 import java.io.File;
-import java.lang.*;
 import java.util.Collection;
 import java.util.Map;
 
@@ -54,7 +53,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotEmpty(String value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotEmpty(String value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value != null && value.equals("")) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should not be empty");
 		}
@@ -95,7 +95,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotNullNorEmpty(String value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNullNorEmpty(String value, String name, Class<T> exceptionClass)
+			throws T {
 		checkNotNull(value, name, exceptionClass);
 		checkNotEmpty(value, name, exceptionClass);
 	}
@@ -138,8 +139,9 @@ public class ValidationUtility {
 	 */
 	public static <T extends Throwable> void checkInstance(Object value, Class<?> expectedType, String name,
 			Class<T> exceptionClass) throws T {
-		if (! expectedType.isInstance(value)) {
-			throw ExceptionHelper.constructException(exceptionClass, name + " should be an instance of " + expectedType.getName());
+		if (!expectedType.isInstance(value)) {
+			throw ExceptionHelper.constructException(exceptionClass,
+					name + " should be an instance of " + expectedType.getName());
 		}
 	}
 
@@ -162,8 +164,9 @@ public class ValidationUtility {
 	 */
 	public static <T extends Throwable> void checkNullOrInstance(Object value, Class<?> expectedType, String name,
 			Class<T> exceptionClass) throws T {
-		if (value != null && ! expectedType.isInstance(value)) {
-			throw ExceptionHelper.constructException(exceptionClass, name + " should be null or an instance of " + expectedType.getName());
+		if (value != null && !expectedType.isInstance(value)) {
+			throw ExceptionHelper.constructException(exceptionClass,
+					name + " should be null or an instance of " + expectedType.getName());
 		}
 	}
 
@@ -183,8 +186,9 @@ public class ValidationUtility {
 	 *            the exception class
 	 */
 	public static <T extends Throwable> void checkExists(File file, String name, Class<T> exceptionClass) throws T {
-		if (file != null && ! file.exists()) {
-			throw ExceptionHelper.constructException(exceptionClass, name + " should point to an existing file or directory");
+		if (file != null && !file.exists()) {
+			throw ExceptionHelper.constructException(exceptionClass,
+					name + " should point to an existing file or directory");
 		}
 	}
 
@@ -203,7 +207,7 @@ public class ValidationUtility {
 	 *            the exception class
 	 */
 	public static <T extends Throwable> void checkIsFile(File file, String name, Class<T> exceptionClass) throws T {
-		if (file != null && ! file.isFile()) {
+		if (file != null && !file.isFile()) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should point to an existing file");
 		}
 	}
@@ -222,8 +226,9 @@ public class ValidationUtility {
 	 * @param exceptionClass
 	 *            the exception class
 	 */
-	public static <T extends Throwable> void checkIsDirectory(File file, String name, Class<T> exceptionClass) throws T {
-		if (file != null && ! file.isDirectory()) {
+	public static <T extends Throwable> void checkIsDirectory(File file, String name, Class<T> exceptionClass)
+			throws T {
+		if (file != null && !file.isDirectory()) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should point to an existing directory");
 		}
 	}
@@ -282,7 +287,8 @@ public class ValidationUtility {
 	 * @param map
 	 *            the map to be checked
 	 */
-	public static <T extends Throwable> void checkNotEmpty(Map<?, ?> map, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotEmpty(Map<?, ?> map, String name, Class<T> exceptionClass)
+			throws T {
 		if (map != null && map.isEmpty()) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should not be empty");
 		}
@@ -301,7 +307,8 @@ public class ValidationUtility {
 	 * @param map
 	 *            the map to be checked
 	 */
-	public static <T extends Throwable> void checkNotNullNorEmpty(Map<?, ?> map, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNullNorEmpty(Map<?, ?> map, String name, Class<T> exceptionClass)
+			throws T {
 		checkNotNull(map, name, exceptionClass);
 		checkNotEmpty(map, name, exceptionClass);
 	}
@@ -401,7 +408,8 @@ public class ValidationUtility {
 	 * @param map
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotNullKeys(Map<?, ?> map, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNullKeys(Map<?, ?> map, String name, Class<T> exceptionClass)
+			throws T {
 		if (map != null && map.containsKey(null)) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should not contain null key");
 		}
@@ -421,7 +429,8 @@ public class ValidationUtility {
 	 * @param map
 	 *            the map to be checked
 	 */
-	public static <T extends Throwable> void checkNotNullValues(Map<?, ?> map, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNullValues(Map<?, ?> map, String name, Class<T> exceptionClass)
+			throws T {
 		if (map != null && map.containsValue(null)) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should not contain null value");
 		}
@@ -542,7 +551,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNegative(double value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNegative(double value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value > 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should not contain empty values");
 		}
@@ -561,7 +571,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkPositive(double value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkPositive(double value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value <= 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should be positive");
 		}
@@ -580,7 +591,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotNegative(double value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNegative(double value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value < 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should be not negative");
 		}
@@ -599,7 +611,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotPositive(double value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotPositive(double value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value > 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should be not negative");
 		}
@@ -653,7 +666,8 @@ public class ValidationUtility {
 			String name, Class<T> exceptionClass) throws T {
 		if (inclusive) {
 			if (value < number) {
-				throw ExceptionHelper.constructException(exceptionClass, name + " should be greater than or equal to " + number);
+				throw ExceptionHelper.constructException(exceptionClass,
+						name + " should be greater than or equal to " + number);
 			}
 		} else {
 			if (value <= number) {
@@ -689,7 +703,8 @@ public class ValidationUtility {
 			Class<T> exceptionClass) throws T {
 		if (inclusive) {
 			if (value > number) {
-				throw ExceptionHelper.constructException(exceptionClass, name + " should be less than or equal to " + number);
+				throw ExceptionHelper.constructException(exceptionClass,
+						name + " should be less than or equal to " + number);
 			}
 		} else {
 			if (value >= number) {
@@ -738,8 +753,9 @@ public class ValidationUtility {
 				valid = (value < to);
 			}
 		}
-		if (! valid) {
-			String message = name + " should be in the range " + (fromInclusive ? "[" : "(") + from + ", " + to + (toInclusive ? "]" : ")");
+		if (!valid) {
+			String message = name + " should be in the range " + (fromInclusive ? "[" : "(") + from + ", " + to
+					+ (toInclusive ? "]" : ")");
 			throw ExceptionHelper.constructException(exceptionClass, message);
 		}
 	}
@@ -795,7 +811,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotNegative(long value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotNegative(long value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value < 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should be positive");
 		}
@@ -814,7 +831,8 @@ public class ValidationUtility {
 	 * @param value
 	 *            the value to be checked
 	 */
-	public static <T extends Throwable> void checkNotPositive(long value, String name, Class<T> exceptionClass) throws T {
+	public static <T extends Throwable> void checkNotPositive(long value, String name, Class<T> exceptionClass)
+			throws T {
 		if (value > 0) {
 			throw ExceptionHelper.constructException(exceptionClass, name + " should be not positive");
 		}
@@ -868,7 +886,8 @@ public class ValidationUtility {
 			Class<T> exceptionClass) throws T {
 		if (inclusive) {
 			if (value < number) {
-				throw ExceptionHelper.constructException(exceptionClass, name + " should be greater than or equal to " + number);
+				throw ExceptionHelper.constructException(exceptionClass,
+						name + " should be greater than or equal to " + number);
 			}
 		} else {
 			if (value <= number) {
@@ -904,7 +923,8 @@ public class ValidationUtility {
 			Class<T> exceptionClass) throws T {
 		if (inclusive) {
 			if (value > number) {
-				throw ExceptionHelper.constructException(exceptionClass, name + " should be less than or equal to " + number);
+				throw ExceptionHelper.constructException(exceptionClass,
+						name + " should be less than or equal to " + number);
 			}
 		} else {
 			if (value >= number) {
@@ -953,8 +973,9 @@ public class ValidationUtility {
 				valid = (value < to);
 			}
 		}
-		if (! valid) {
-			String message = name + " should be in the range " + (fromInclusive ? "[" : "(") + from + ", " + to + (toInclusive ? "]" : ")");
+		if (!valid) {
+			String message = name + " should be in the range " + (fromInclusive ? "[" : "(") + from + ", " + to
+					+ (toInclusive ? "]" : ")");
 			throw ExceptionHelper.constructException(exceptionClass, message);
 		}
 	}

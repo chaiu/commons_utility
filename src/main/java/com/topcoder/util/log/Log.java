@@ -6,4 +6,3 @@ public interface Log {
 
 	void log(Level level, String message);
 }
-

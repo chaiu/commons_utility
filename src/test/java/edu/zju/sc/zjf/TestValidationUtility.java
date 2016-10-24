@@ -1,4 +1,4 @@
-package com.topcoder.commons.utils;
+package edu.zju.sc.zjf;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import edu.zju.sc.zjf.ValidationUtility;
 
 public class TestValidationUtility {
 
@@ -22,7 +24,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNull2() {
 		String name = "Integer";
@@ -35,7 +37,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmpty() {
 		String name = "String";
@@ -47,7 +49,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotEmpty2() {
 		String name = "String";
@@ -60,7 +62,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyAfterTrimming() {
 		String name = "String";
@@ -72,7 +74,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotEmptyAfterTrimming2() {
 		String name = "String";
@@ -85,7 +87,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmpty() {
 		String name = "String";
@@ -97,7 +99,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmpty2() {
 		String name = "String";
@@ -110,7 +112,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmpty3() {
 		String name = "String";
@@ -123,7 +125,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyAfterTrimming() {
 		String name = "String";
@@ -135,7 +137,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyAfterTrimming2() {
 		String name = "String";
@@ -148,7 +150,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkInstance() {
 		String value = "hello";
@@ -161,7 +163,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkInstance2() {
 		Integer value = new Integer(1024);
@@ -175,7 +177,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNullOrInstance() {
 		String value = "hello";
@@ -188,7 +190,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNullOrInstance2() {
 		String value = null;
@@ -201,7 +203,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNullOrInstance3() {
 		Integer value = new Integer(1024);
@@ -215,7 +217,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkExists() {
 		File file = new File(getClass().getClassLoader().getResource("log4j.properties").getPath());
@@ -227,7 +229,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkExists2() {
 		File file = new File("jivcox");
@@ -240,7 +242,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkIsFile() {
 		File file = new File(getClass().getClassLoader().getResource("log4j.properties").getPath());
@@ -252,7 +254,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkIsFile2() {
 		File file = new File("jivcox");
@@ -265,7 +267,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkIsDirectory() {
 		File file = new File(getClass().getClassLoader().getResource(".").getPath());
@@ -277,7 +279,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkIsDirectory2() {
 		File file = new File("jivcox");
@@ -290,7 +292,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyCollection() {
 		Collection<String> collection = new ArrayList<String>();
@@ -305,7 +307,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotEmptyCollection2() {
 		Collection<String> collection = new ArrayList<String>();
@@ -318,7 +320,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyCollection() {
 		Collection<String> collection = new ArrayList<String>();
@@ -333,7 +335,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyCollection2() {
 		Collection<String> collection = new ArrayList<String>();
@@ -346,7 +348,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyMap() {
 		Map<String, String> map = new HashMap<String, String>();
@@ -360,7 +362,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotEmptyMap2() {
 		Map<String, String> map = new HashMap<String, String>();
@@ -373,7 +375,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyMap() {
 		Map<String, String> map = new HashMap<String, String>();
@@ -387,7 +389,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNullNorEmptyMap2() {
 		Map<String, String> map = new HashMap<String, String>();
@@ -400,7 +402,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullElements() {
 		Collection<String> collection = new ArrayList<String>();
@@ -415,7 +417,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotNullElements2() {
 		Collection<String> collection = new ArrayList<String>();
@@ -431,7 +433,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyElements() {
 		Collection<String> collection = new ArrayList<String>();
@@ -446,7 +448,7 @@ public class TestValidationUtility {
 			Assert.fail();
 		}
 	}
-	
+
 	@Test
 	public void checkNotEmptyElements2() {
 		Collection<String> collection = new ArrayList<String>();
@@ -462,26 +464,26 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullKeys() {
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("1", "123");
 		map1.put("2", "456");
-		
+
 		Map<String, String> map2 = new HashMap<String, String>();
 		map2.put("1", "123");
 		map2.put(null, "456");
-		
+
 		String name = "我是名字啊，你不记得了吗？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotNullKeys(map1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotNullKeys(map2, name, exceptionClass);
 		} catch (Exception e) {
@@ -489,26 +491,26 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNullValues() {
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("1", "123");
 		map1.put("2", "456");
-		
+
 		Map<String, String> map2 = new HashMap<String, String>();
 		map2.put("1", "123");
 		map2.put("2", null);
-		
+
 		String name = "我是名字啊，你不记得了吗？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotNullValues(map1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotNullValues(map2, name, exceptionClass);
 		} catch (Exception e) {
@@ -516,26 +518,26 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyKeys() {
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("1", "123");
 		map1.put("2", "456");
-		
+
 		Map<String, String> map2 = new HashMap<String, String>();
 		map2.put("1", "123");
 		map2.put("", "456");
-		
+
 		String name = "我是名字啊，你不记得了吗？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotEmptyKeys(map1, true, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotEmptyKeys(map2, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -543,27 +545,27 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotEmptyValues() {
 
 		Map<String, String> map1 = new HashMap<String, String>();
 		map1.put("1", "123");
 		map1.put("2", "456");
-		
+
 		Map<String, String> map2 = new HashMap<String, String>();
 		map2.put("1", "123");
 		map2.put("2", "");
-		
+
 		String name = "我是名字啊，你不记得了吗？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotEmptyValues(map1, true, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotEmptyValues(map2, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -571,20 +573,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNegative() {
 		double value1 = -1;
 		double value2 = 1;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNegative(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNegative(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -592,20 +594,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkPositive() {
 		double value1 = 1;
 		double value2 = -1;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkPositive(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkPositive(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -613,20 +615,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNegative() {
 		double value1 = 0;
 		double value2 = -1;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotNegative(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotNegative(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -634,20 +636,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotPositive() {
 		double value1 = 0;
 		double value2 = 1;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotPositive(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotPositive(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -655,20 +657,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotZero() {
 		double value1 = 1;
 		double value2 = 0;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotZero(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotZero(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -676,7 +678,7 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkGreaterThan() {
 		double value1 = 1;
@@ -685,7 +687,7 @@ public class TestValidationUtility {
 		double number = 0;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkGreaterThan(value3, number, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -694,11 +696,11 @@ public class TestValidationUtility {
 			} catch (Exception e2) {
 				return;
 			}
-		}		
-		
+		}
+
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkLessThan() {
 		double value1 = 1;
@@ -707,7 +709,7 @@ public class TestValidationUtility {
 		double number = 0;
 		String name = "我不是名字，你瞅我干什么？";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkLessThan(value1, number, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -717,10 +719,10 @@ public class TestValidationUtility {
 				return;
 			}
 		}
-		
+
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkInRange() {
 		double value1 = 2;
@@ -732,7 +734,7 @@ public class TestValidationUtility {
 		double to = 1;
 		String name = "名字真是越来越复杂了，老师真可pia";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkInRange(value3, from, to, true, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -760,20 +762,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNegativeLong() {
 		long value1 = -1;
 		long value2 = 0;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNegative(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNegative(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -781,20 +783,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkPositiveLong() {
 		long value1 = 1;
 		long value2 = 0;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkPositive(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkPositive(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -802,20 +804,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotNegativeLong() {
 		long value1 = 0;
 		long value2 = -1;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotNegative(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotNegative(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -823,20 +825,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotPositiveLong() {
 		long value1 = 0;
 		long value2 = 1;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotPositive(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotPositive(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -844,20 +846,20 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkNotZeroLong() {
 		long value1 = 1;
 		long value2 = 0;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkNotZero(value1, name, exceptionClass);
 		} catch (Exception e) {
 			Assert.fail();
 		}
-		
+
 		try {
 			ValidationUtility.checkNotZero(value2, name, exceptionClass);
 		} catch (Exception e) {
@@ -865,14 +867,14 @@ public class TestValidationUtility {
 		}
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkGreaterThanLong() {
 		long value = 0;
 		long number = 1;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkGreaterThan(value, number, true, name, exceptionClass);
 		} catch (Exception e) {
@@ -886,28 +888,28 @@ public class TestValidationUtility {
 
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkLessThanLong() {
 		long value = 1;
 		long number = 0;
 		String name = "我不想写了啊啊啊啊啊啊啊";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkLessThan(value, number, true, name, exceptionClass);
 		} catch (Exception e) {
-			
+
 			try {
 				ValidationUtility.checkLessThan(value, number, false, name, exceptionClass);
 			} catch (Exception e1) {
 				return;
 			}
 		}
-		
+
 		Assert.fail();
 	}
-	
+
 	@Test
 	public void checkInRangeLong() {
 		long value1 = 2;
@@ -919,7 +921,7 @@ public class TestValidationUtility {
 		long to = 1;
 		String name = "名字真是越来越复杂了，老师真可pia";
 		Class<Exception> exceptionClass = Exception.class;
-		
+
 		try {
 			ValidationUtility.checkInRange(value3, from, to, true, true, name, exceptionClass);
 		} catch (Exception e) {

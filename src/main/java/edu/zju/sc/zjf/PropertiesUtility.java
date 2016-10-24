@@ -1,4 +1,4 @@
-package com.topcoder.commons.utils;
+package edu.zju.sc.zjf;
 
 import java.lang.*;
 import java.text.NumberFormat;
@@ -108,9 +108,9 @@ public class PropertiesUtility {
 	 */
 	public static <T extends Throwable> Integer getIntegerProperty(Properties properties, String key, boolean required,
 			Class<T> exceptionClass) throws T {
-		
+
 		Integer result = null;
-		
+
 		String value = properties.getProperty(key);
 		if (value == null) {
 			if (required) {
@@ -121,9 +121,10 @@ public class PropertiesUtility {
 		try {
 			result = Integer.valueOf(value);
 		} catch (NumberFormatException ex) {
-			throw ExceptionHelper.constructException(exceptionClass, getPropertyTitle(key) + " should be a valid integer", ex);
+			throw ExceptionHelper.constructException(exceptionClass,
+					getPropertyTitle(key) + " should be a valid integer", ex);
 		}
-		
+
 		return result;
 	}
 
@@ -148,7 +149,7 @@ public class PropertiesUtility {
 	public static <T extends Throwable> Long getLongProperty(Properties properties, String key, boolean required,
 			Class<T> exceptionClass) throws T {
 		Long result = null;
-		
+
 		String value = properties.getProperty(key);
 		if (value == null) {
 			if (required) {
@@ -159,7 +160,8 @@ public class PropertiesUtility {
 		try {
 			result = Long.valueOf(value);
 		} catch (NumberFormatException ex) {
-			throw ExceptionHelper.constructException(exceptionClass, getPropertyTitle(key) + " should be a valid long integer", ex);
+			throw ExceptionHelper.constructException(exceptionClass,
+					getPropertyTitle(key) + " should be a valid long integer", ex);
 		}
 		return result;
 	}
@@ -185,7 +187,7 @@ public class PropertiesUtility {
 	public static <T extends Throwable> Double getDoubleProperty(Properties properties, String key, boolean required,
 			Class<T> exceptionClass) throws T {
 		Double result;
-		
+
 		String value = properties.getProperty(key);
 		if (value == null) {
 			if (required) {
@@ -196,7 +198,8 @@ public class PropertiesUtility {
 		ParsePosition parsePosition = new ParsePosition(0);
 		result = (Double) (NumberFormat.getInstance(Locale.US).parse(value, parsePosition));
 		if (parsePosition.getIndex() != value.length()) {
-			throw ExceptionHelper.constructException(exceptionClass, getPropertyTitle(key) + " should be a valid double");
+			throw ExceptionHelper.constructException(exceptionClass,
+					getPropertyTitle(key) + " should be a valid double");
 		}
 		return result;
 	}
@@ -233,7 +236,8 @@ public class PropertiesUtility {
 		ParsePosition parsePosition = new ParsePosition(0);
 		Date result = new SimpleDateFormat(format, Locale.US).parse(value, parsePosition);
 		if (result == null || parsePosition.getIndex() != value.length()) {
-			throw ExceptionHelper.constructException(exceptionClass, getPropertyTitle(key) + " should be in format [" + format + "]");
+			throw ExceptionHelper.constructException(exceptionClass,
+					getPropertyTitle(key) + " should be in format [" + format + "]");
 		}
 		return result;
 	}
@@ -270,7 +274,8 @@ public class PropertiesUtility {
 		try {
 			result = Class.forName(value);
 		} catch (Exception ex) {
-			throw ExceptionHelper.constructException(exceptionClass, getPropertyTitle(key) + " contains invalid full class name (" + value + ")", ex);
+			throw ExceptionHelper.constructException(exceptionClass,
+					getPropertyTitle(key) + " contains invalid full class name (" + value + ")", ex);
 		}
 		return result;
 	}
@@ -288,7 +293,7 @@ public class PropertiesUtility {
 	 */
 	public static Properties getSubConfiguration(Properties properties, String configName) {
 		Properties result = null;
-				
+
 		String prefix = configName + ".";
 		result = new Properties();
 		Iterator<Entry<Object, Object>> it = properties.entrySet().iterator();
@@ -303,6 +308,7 @@ public class PropertiesUtility {
 		}
 		return result;
 	}
+
 	/**
 	 * Retrieves the property title to be used in exception message.
 	 * 
